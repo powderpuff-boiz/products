@@ -1,0 +1,8 @@
+config
+data/
+final_product_samples
+node_modules
+schemata
+db.sql
+.secret.json
+.DS_Store

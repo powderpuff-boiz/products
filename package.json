@@ -1,0 +1,40 @@
+{
+  "name": "overview-service-2",
+  "version": "1.0.0",
+  "description": "SDC",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "jest spec/ --verbose",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/powderpuff-boiz/overview-service-2.git"
+  },
+  "keywords": [
+    "sdc",
+    "overview"
+  ],
+  "author": "Ry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/powderpuff-boiz/overview-service-2/issues"
+  },
+  "homepage": "https://github.com/powderpuff-boiz/overview-service-2#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.14",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4"
+  },
+  "dependencies": {
+    "@fast-csv/format": "^4.3.5",
+    "@fast-csv/parse": "^4.3.6",
+    "body-parser": "^1.19.0",
+    "csv-parser": "^3.0.0",
+    "csvtojson": "^2.0.10",
+    "fast-csv": "^4.3.6",
+    "multer": "^1.4.3"
+  }
+}
