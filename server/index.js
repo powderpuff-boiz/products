@@ -3,13 +3,13 @@ const service = express();
 const port = process.env.port || 3000;
 const bodyParser = require("body-parser");
 const multer  = require('multer')
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });//this is storing in memory
-// const cartcsv = require('./../../data/cart.csv');
+// const storage = multer.memoryStorage();
+// const upload = multer({ storage: storage });//this is storing in memory
 const initRoute = require('./router/index');
 // const parsedCSV = require('./middleware/csvparser.js');
 //const connection = require('./../db/pg.js');
-const { pool } = require('./../db/pg.js');
+const pool = require('./../db/pg.js');
+
 service.use(bodyParser.urlencoded({ extended: false }));
 service.use(bodyParser.json());
 

@@ -1,0 +1,5 @@
+
+{  
+  "tutorial":"https://www.postgresqltutorial.com/what-is-postgresql/",
+  "nestedData": "https://stackoverflow.com/questions/39922315/build-json-from-2-aggregated-columns-in-postgres"
+}

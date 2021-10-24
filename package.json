@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "test": "jest spec/ --verbose",
-    "start": "nodemon index.js"
+    "start": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
