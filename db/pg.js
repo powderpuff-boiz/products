@@ -9,17 +9,17 @@ const pool = new Pool({
   port: 5432
 })
 
-pool.connect((err, client, release) => {
-  if (err) {
-    return console.error('Error acquiring client', err.stack)
-  }
-  client.query('SELECT * FROM carts', (err, result) => {
-    release()
-    if (err) {
-      return console.error('Error executing query', err.stack)
-    }
-    console.log(result.rows)
-  })
-})
+// pool.connect((err, client, release) => {
+//   if (err) {
+//     return console.error('Error acquiring client', err.stack)
+//   }
+//   client.query("SELECT related_product_id FROM relateds WHERE current_product_id = '781040';", (err, result) => {
+//     release()
+//     if (err) {
+//       return console.error('Error executing query', err.stack)
+//     }
+//     console.log(result.rows)
+//   })
+// })
 
 module.exports = pool;
