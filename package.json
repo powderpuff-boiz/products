@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "nodemon server/index.js",
-    "test": "jest spec/ --config jest.config.js",
+    "test": "jest spec/ --config jest.config.js --coverage",
     "test:watch": "npm run test -- --watch"
   },
   "repository": {

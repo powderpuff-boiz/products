@@ -1,4 +1,5 @@
 config
+coverage
 data/
 db/
 final_product_samples

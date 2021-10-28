@@ -23,21 +23,21 @@ const products = {
   }
 }
 
-const ids = {
-  get: (req, res) => {
+// const ids = {
+//   get: (req, res) => {
 
-    res.status(200)
-    res.send('data')
-  }
-}
+//     res.status(200)
+//     res.send('data')
+//   }
+// }
 
-const styles = {
-  get: (req, res) => {
+// const styles = {
+//   get: (req, res) => {
 
-    res.status(200)
-    res.send(data)
-  }
-}
+//     res.status(200)
+//     res.send(data)
+//   }
+// }
 
 
 module.exports = { relateds, products };
