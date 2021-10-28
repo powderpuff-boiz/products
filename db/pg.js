@@ -6,20 +6,18 @@ const pool = new Pool({
   host: "127.0.0.1",
   database: "sdc",
   password: "",
-  port: 5432
+  port: 5432,
+  max: 20,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 2000,
 })
 
-// pool.connect((err, client, release) => {
-//   if (err) {
-//     return console.error('Error acquiring client', err.stack)
-//   }
-//   client.query("SELECT related_product_id FROM relateds WHERE current_product_id = '781040';", (err, result) => {
-//     release()
-//     if (err) {
-//       return console.error('Error executing query', err.stack)
-//     }
-//     console.log(result.rows)
-//   })
-// })
+pool.connect((err, client, release) => {
+  if (err) {
+    return console.error('Error acquiring client', err.stack)
+  }
+  // console.log('Made a successfule connection to Postgres SDC');
+  client.release();
+})
 
 module.exports = pool;

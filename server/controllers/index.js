@@ -1,14 +1,12 @@
 const db = require('../../db/pg.js')
 const { getRelateds, getProducts } = require('../../db/models');
 
-//This file's methods will intereact with the database
+//This file's funcs intereact with the db
 
 const relateds = {
   get: (req, res) => {
-    //find where in req.params is the id
-    //call the function from models
-    getRelateds.getAllRelateds( '730984', (err, data) => {
-      //if successful console.log
+    let { id } = req.query;
+    getRelateds.getAllRelateds( id, (err, data) => {
       res.status(200)
       res.send(data)
     })
@@ -17,7 +15,7 @@ const relateds = {
 
 const products = {
   get: (req, res) => {
-    const { page, count } = req.query;
+    let { page, count } = req.query;
     getProducts.getProductsList(page, count, (err, data) => {
       res.status(200)
       res.send(data)

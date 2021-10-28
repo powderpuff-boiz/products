@@ -4,8 +4,9 @@
   "description": "SDC",
   "main": "server/index.js",
   "scripts": {
-    "test": "jest spec/ --verbose",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "test": "jest spec/ --config jest.config.js",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,15 @@
   },
   "homepage": "https://github.com/powderpuff-boiz/overview-service-2#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "express": "^4.17.1",
     "jest": "^27.3.1",
     "nodemon": "^2.0.14",
     "pg": "^8.7.1",
-    "pg-hstore": "^2.3.4"
+    "pg-hstore": "^2.3.4",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.6"
   },
   "dependencies": {
     "@fast-csv/format": "^4.3.5",
