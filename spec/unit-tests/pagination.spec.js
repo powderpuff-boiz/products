@@ -18,3 +18,6 @@ describe('pagination logic for /products?page=0&page=5 route', () => {
     expect(offset).toEqual(0);
   })
 })
+
+
+//try running without ORDER BY
