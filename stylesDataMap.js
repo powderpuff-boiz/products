@@ -796,11 +796,15 @@ let styleData = [
 console.log('StylesData length', styleData.length); //72
 
 //filter through id newSET
-let allSkus = styleData.map( elem => elem.id)
-let uniqSet = new Set([...allSkus]);
-uniqs = [...uniqSet]; //now an array
+let allStylesIds = styleData.map( elem => elem.id)
+let uniqStyles = new Set([...allStylesIds]);
+uniqStyles = [...uniqStyles]; //now an array
 // console.log('UNIQs', uniqs); // length of 24 uniq
-let results = uniqs.map( style_id => {
+let allSkus = styleData.map(elem => elem.sid);
+let uniqSkus = new Set([...allSkus]);
+uniqSkus = [...uniqSkus];
+
+let results = uniqStyles.map( style_id => {
   return {
     style_id: style_id,
     name: '',
@@ -815,22 +819,27 @@ const addInfo = () => {
 
 }
 const addPhotos = () => {
-  let photos = [];
-  //for every object in styleData that has an id of product_id
-    //push {thumbnailurl, url} into results[i].photos
   for (let i = 0; i < styleData.length; i++) {
     let current = styleData[i];
-    console.log('current OBJ', current)
-    // let index = results.indexOf(styleData[i].id);
+    // console.log('current OBJ', current)
+    let index = results.findIndex( elem => elem.style_id === current.id);
     // console.log('index is', index)
-    results[index].photos.push({ url: current.url, thumbnail_ur: current.thumbnail_url })
+    results[index].photos.push({ url: current.url, thumbnail_url: current.thumbnail_url })
   }
 }
 const addSkus = () => {
-
+  for (let i = 0; i < styleData.length; i++) {
+    let current = styleData[i];
+    // console.log('current OBJ', current)
+    let index = results.findIndex(elem => elem.style_id === current.id);
+    // console.log('index is', index)
+    results[index].photos.push({ url: current.url, thumbnail_url: current.thumbnail_url })
+  }
 }
 addPhotos();
-console.log('results are', results);
+console.log('results length is', results.length);
+console.log('styleData[0]', styleData[0])
+// console.log('results[0] is ', results[0]);
 
 
 module.exports;
