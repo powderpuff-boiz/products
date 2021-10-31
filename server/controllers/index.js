@@ -5,7 +5,8 @@ const { getRelateds, getProducts, getProductById, getStyles } = require('../../d
 
 const relateds = {
   get: (req, res) => {
-    let { id } = req.query;
+    const id = req.params.product_id;
+    console.log('id is', id)
     getRelateds.getAllRelateds( id, (err, data) => {
       if (err) {
         console.error('ERROR', err);
@@ -60,7 +61,7 @@ const ids = {
       res.status(200);
       let features = composeIdAPI(data);
       console.log('featureAPI', features);
-      res.send(data);
+      res.send(features);
     })
   }
 }

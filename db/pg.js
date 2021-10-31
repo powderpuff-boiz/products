@@ -16,7 +16,7 @@ pool.connect((err, client, release) => {
   if (err) {
     return console.error('Error acquiring client', err.stack)
   }
-  // console.log('Made a successfule connection to Postgres SDC');
+  // console.log('Made a successful connection to Postgres SDC');
   client.release();
 })
 
