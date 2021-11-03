@@ -60,7 +60,7 @@ const ids = {
       };
       res.status(200);
       let features = composeIdAPI(data);
-      console.log('featureAPI', features);
+      // console.log('featureAPI', features);
       res.send(features);
     })
   }

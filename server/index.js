@@ -1,6 +1,6 @@
 require('dotenv').config();
 const service = require('./service');
-const port = process.env.PORT || 3000;
+const port = process.env.S_PORT || 3002;
 
 service.listen(port, err => {
   if (err)
