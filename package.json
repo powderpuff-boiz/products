@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "test": "jest spec/ --config jest.config.js --coverage",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "k6": "k6 run metrics/k6init.js"
   },
   "repository": {
     "type": "git",
