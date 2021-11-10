@@ -1,5 +1,5 @@
 const db = require('../../db/pg.js')
-const { getRelateds, getProducts, getProductById, getStyles } = require('../../db/models');
+const { getRelateds, getProducts, getProductById, getStyles } = require('../../db/models/index.js');
 
 const relateds = {
   get: (req, res) => {
