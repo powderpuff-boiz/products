@@ -1,10 +1,8 @@
 config
 coverage
 data/
-db/
 final_product_samples
 node_modules
-schemata
 db.sql
 
 .secret.json
