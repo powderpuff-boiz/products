@@ -27,7 +27,7 @@ export let options = {
 };
 export default function () {
   let rndId = Math.floor((Math.random() * 1000000) + 9000000);
-  const BASE_URL = `http://localhost:3002/products`;
+  const BASE_URL = `ec2-54-210-13-16.compute-1.amazonaws.com`;
   http.get(`${BASE_URL}/${rndId}/products`);
   // const responses = http.batch([
   //   ['GET', `${BASE_URL}/`],

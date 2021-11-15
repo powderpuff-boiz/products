@@ -2,11 +2,11 @@ require('dotenv').config();
 const { Pool } = require('pg');
 
 const pool = new Pool({
-  username: process.env.DB_USER,
-  host: process.env.DB_HOST,
+  username: "ubuntu",
+  host: "54.210.13.16",
   database: "sdc",
-  password: process.env.DB_PASS,
-  port: process.env.DB_PORT,
+  password: "primusSucks",
+  port: 5432,
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
@@ -16,7 +16,7 @@ pool.connect((err, client, release) => {
   if (err) {
     return console.error('Error acquiring client', err.stack)
   }
-  // console.log('Made a successful connection to Postgres SDC');
+  console.log('Made a successful connection to Postgres SDC');
   client.release();
 })
 
