@@ -4,7 +4,7 @@ const { getRelateds, getProducts, getProductById, getStyles } = require('../../d
 const relateds = {
   get: (req, res) => {
     const id = req.params.product_id;
-    console.log('id is', id)
+//    console.log('id is', id)
     getRelateds.getAllRelateds( id, (err, data) => {
       if (err) {
         console.error('ERROR', err);

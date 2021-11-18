@@ -32,13 +32,14 @@ const getProducts = {
     const limit = limiter(count);
     pool.connect( (err, client, release) => {  //this whole block should be refactored
       if (err) {
-        return console.error('Error acquiring client', err.stack);
+	return console.error('Error acquiring client', err.stack);
       }
       client.query(`SELECT * FROM products
                     ORDER BY id
                     OFFSET ${offset} LIMIT ${limit};`, (err, result) => {
         release()
         if (err) {
+	  console.log('ERROR HERE in models/index.js.getProducts');	
           return console.error('Error executing query', err.stack);
         }
         cb(null, result.rows);
